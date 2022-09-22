@@ -35,11 +35,14 @@ if not os.path.isfile(CHROMEDRIVER_FILE):
 		zf.extractall("/tmp")
 	print("[*] Make chromedriver binary executable ...")
 	os.chmod(CHROMEDRIVER_FILE,os.stat(CHROMEDRIVER_FILE).st_mode | stat.S_IEXEC)
-	
+	print("/tmp:",os.listdir("/tmp"))
+
 print("[*] Starting selenium chrome-browser ...")
 opt = Options()
 opt.add_argument("--headless")
 opt.add_argument("--no-sandbox")
+opt.add_argument("--disable-dev-shm-usage")
+opt.add_argument("--single-process")
 opt.binary_location = CHROME_FILE
 driver = webdriver.Chrome(executable_path=CHROMEDRIVER_FILE,options=opt)
 
