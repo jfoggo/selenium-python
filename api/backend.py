@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import os
 import api.selenium_browser as browser
 
 # Create FastAPI app instance
