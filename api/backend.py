@@ -1,8 +1,10 @@
 from fastapi import FastAPI
 import api.selenium_browser as browser
 
+# Create FastAPI app instance
 app = FastAPI()
 
+# Add handler for all GET routes
 @app.get("*")
 def send_get_request(url : str = "https://api.myip.com"):
 	print("[*] Send get request to: "+url)
