@@ -7,13 +7,9 @@ opt = Options()
 opt.add_argument("--headless")
 opt.add_argument("--no-sandbox")
 driver = webdriver.Chrome(options=opt)
-driver.get("http://www.python.org")
-assert "Python" in driver.title
-elem = driver.find_element(By.NAME, "q")
-elem.clear()
-elem.send_keys("pycon")
-elem.send_keys(Keys.RETURN)
-assert "No results found." not in driver.page_source
-driver.close()
 
-print("All tests passed!")
+def get(url):
+	driver.get(url)
+	result = driver.page_content
+	driver.close()
+	return result
