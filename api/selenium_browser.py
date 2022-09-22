@@ -13,7 +13,7 @@ CHROMEDRIVER_URL = "https://chromedriver.storage.googleapis.com/2.37/chromedrive
 CHROME_FILE = "/tmp/headless-chromium"
 CHROMEDRIVER_FILE = "/tmp/chromedriver"
 
-if not os.isfile(CHROMEDRIVER_FILE):
+if not os.path.isfile(CHROMEDRIVER_FILE):
 	print("[*] Download chrome as ZIP file ...")
 	req = requests.get(CHROME_URL)
 	print("[*] Save ZIP file to /tmp dir ...")
