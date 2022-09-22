@@ -21,7 +21,7 @@ if not os.path.isfile(CHROMEDRIVER_FILE):
 		f.write(req.content)
 	print("[*] Unzipping chrome binary ...")
 	with ZipFile(CHROME_FILE+".zip","r") as zf:
-		zf.extractall()
+		zf.extractall("/tmp")
 	print("[*] Make chrome binary executable ...")
 	os.chmod(CHROME_FILE,os.stat(CHROME_FILE).st_mode | stat.S_IEXEC)
 
@@ -32,7 +32,7 @@ if not os.path.isfile(CHROMEDRIVER_FILE):
 		f.write(req.content)
 	print("[*] Unzipping chromedriver binary ...")
 	with ZipFile(CHROMEDRIVER_FILE+".zip","r") as zf:
-		zf.extractall()
+		zf.extractall("/tmp")
 	print("[*] Make chromedriver binary executable ...")
 	os.chmod(CHROMEDRIVER_FILE,os.stat(CHROMEDRIVER_FILE).st_mode | stat.S_IEXEC)
 	
