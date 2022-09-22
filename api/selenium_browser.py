@@ -40,7 +40,7 @@ print("[*] Starting selenium chrome-browser ...")
 opt = Options()
 opt.add_argument("--headless")
 opt.add_argument("--no-sandbox")
-opt.binary_location(CHROME_FILE)
+opt.binary_location = CHROME_FILE
 driver = webdriver.Chrome(executable_path=CHROMEDRIVER_FILE,options=opt)
 
 def get(url):
