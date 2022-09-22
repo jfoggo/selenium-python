@@ -43,6 +43,10 @@ opt.add_argument("--headless")
 opt.add_argument("--no-sandbox")
 opt.add_argument("--disable-dev-shm-usage")
 opt.add_argument("--single-process")
+opt.add_argument("--disable-gpu")
+opt.add_argument("--disable-dev-tools")
+opt.add_argument("--no-zygote")
+opt.add_argument("--disable-gpu")
 opt.binary_location = CHROME_FILE
 driver = webdriver.Chrome(executable_path=CHROMEDRIVER_FILE,options=opt)
 
