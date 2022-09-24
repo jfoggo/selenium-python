@@ -14,7 +14,7 @@ opt.add_argument("--disable-gpu")
 opt.add_argument("--disable-dev-tools")
 opt.add_argument("--no-zygote")
 opt.add_argument("--disable-gpu")
-driver = webdriver.Chrome(executable_path=ChromeDriverManager(path="/tmp").install(),options=opt)
+driver = webdriver.Chrome(executable_path=ChromeDriverManager(path="/tmp").install(),options=opt,service_log_path="/tmp")
 
 def get(url):
 	driver.get(url)
